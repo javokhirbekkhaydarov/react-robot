@@ -1,8 +1,8 @@
 import React from "react";
-import { robots } from "./robots";
-import CardList from "./CardList";
+import { robots } from "../components/index";
+import CardList from "../components/CardList";
 import SearchBox from "./SearchBox";
-import "./App.css";
+import "../components/App.css";
 class App extends React.Component {
   state = {
     robots: [],
