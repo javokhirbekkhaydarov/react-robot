@@ -25,7 +25,9 @@ class App extends React.Component {
         .toLowerCase()
         .includes(this.state.searchfield.toLocaleLowerCase());
     });
-
+     if(this.state.robots.length === 0){
+      return <h2>404 note found</h2>
+     }
     return (
       <div className="tc">
         <h1>RoboFriends</h1>
