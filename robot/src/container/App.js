@@ -1,9 +1,9 @@
 import React from "react";
-import { robots } from "../index";
+import { robots } from "../components/robots";
 import CardList from "../components/CardList";
-import SearchBox from "./SearchBox";
-import "../components/App.css";
-import Scroll from "./Scroll";
+import SearchBox from "../components/SearchBox";
+import "./App.css";
+import Scroll from "../components/Scroll";
 class App extends React.Component {
   state = {
     robots: [],
@@ -27,7 +27,7 @@ class App extends React.Component {
         .includes(this.state.searchfield.toLocaleLowerCase());
     });
     if (this.state.robots.length === 0) {
-      return <h2>404 note found</h2>;
+      return <h1 className="tc">loading.....</h1>;
     }
     return (
       <div className="tc">
