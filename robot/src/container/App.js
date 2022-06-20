@@ -21,15 +21,13 @@ class App extends React.Component {
     });
   };
   render() {
-    const filteredRobots = this.state.robots.filter((robot) => {
-      return robot.name
-        .toLowerCase()
-        .includes(this.state.searchfield.toLocaleLowerCase());
+    const { robots, searchfield } = this.state;
+    const filteredRobots = robots.filter((robot) => {
+      return robot.name.toLowerCase().includes(searchfield.toLocaleLowerCase());
     });
-    if (this.state.robots.length === 0) {
-      return <h1 className="tc">loading.....</h1>;
-    }
-    return (
+    return !robots.length ? 
+       <h1 className="tc">loading.....</h1> : 
+  
       <div className="tc">
         <h1>RoboFriends</h1>
         <SearchBox searchChange={this.onSearchChange} />
@@ -37,7 +35,7 @@ class App extends React.Component {
           <CardList robots={filteredRobots} />
         </Scroll>
       </div>
-    );
+  
   }
 }
 
